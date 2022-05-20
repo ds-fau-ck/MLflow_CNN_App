@@ -3,7 +3,7 @@ import imghdr
 import os
 from PIL import Image
 import logging
-
+from src.utils.common import create_directories
 def validating_image(config: dict) -> None:
     PARENT_DIR=os.path.join(
         config["data"]["unzip_data_dir"],
@@ -13,6 +13,7 @@ def validating_image(config: dict) -> None:
         config["data"]["unzip_data_dir"],
         config["data"]["bad_data_dir"]
     )
+    create_directories([BAD_DATA_DIR])
     for dirs in os.listdir(PARENT_DIR):
         full_path_data_dir=os.path.join(PARENT_DIR,dirs)
         for imgs in os.listdir(full_path_data_dir):
