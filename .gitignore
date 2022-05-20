@@ -141,4 +141,4 @@ configs/secrets.yaml
 mlruns/
 data_1.zip
 running_logs.log
-
+PetImages/
