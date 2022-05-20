@@ -4,7 +4,7 @@ import logging
 from tqdm import tqdm 
 import os 
 import random
-from src.utils.common import read_yaml, create_directories
+from src.utils.common import read_yaml, create_directories, unzip_file
 import urllib.request as req
 
 
@@ -31,6 +31,14 @@ def main(config_path):
         logging.info(f"filename: {filename} created with info {headers}")
     else:
         logging.info(f"filename: {data_file} already present.")
+    
+    #unzip operation
+    unzip_data_dir=config["data"]["unzip_data_dir"]
+    print(unzip_data_dir)
+    create_directories([unzip_data_dir])
+    unzip_file(source=data_file_path, dest=unzip_data_dir)
+
+
 
 
 
