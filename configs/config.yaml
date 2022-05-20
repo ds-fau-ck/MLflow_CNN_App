@@ -4,5 +4,9 @@ data:
   local_dir: data_1
   data_file: data_1.zip
   unzip_data_dir: data_1
+  bad_data_dir: bad_data 
+  parent_data_dir: PetImages
+  
+
 
 
