@@ -4,7 +4,15 @@ import os
 from PIL import Image
 import logging
 
-def validating_image(PARENT_DIR, BAD_DATA_DIR):
+def validating_image(config: dict) -> None:
+    PARENT_DIR=os.path.join(
+        config["data"]["unzip_data_dir"],
+        config["data"]["parent_data_dir"]
+    )
+    BAD_DATA_DIR=os.path.join(
+        config["data"]["unzip_data_dir"],
+        config["data"]["bad_data_dir"]
+    )
     for dirs in os.listdir(PARENT_DIR):
         full_path_data_dir=os.path.join(PARENT_DIR,dirs)
         for imgs in os.listdir(full_path_data_dir):
